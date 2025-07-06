@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#80CBC4"
+    tools:context=".fragment.HomeFragment"
+    android:padding="4dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#80CBC4"
+            android:layout_marginTop="5dp"
+            android:elevation="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                app:boxBackgroundMode="outline"
+                app:boxBackgroundColor="@color/white"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etTaskTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="TODO Title"
+                    android:textColor="@color/black"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAddTask"
+                android:backgroundTint="#00897B"
+                android:layout_marginStart="7dp"
+                android:layout_marginEnd="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Add TODO"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvToDoList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="12dp"/>
+
+</LinearLayout>
