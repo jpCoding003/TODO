@@ -1,6 +1,7 @@
 package com.tops.todo.model
 
-data class todoTitlt(
-    val id: Int,
-    val Tasktitle: String
+data class TodoModel(
+    val Id: Int,
+    val Task: String,
+    val Completed: Int
 )

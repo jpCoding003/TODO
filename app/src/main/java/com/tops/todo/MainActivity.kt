@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
         val listoffragments = listOf(HomeFragment() , SecondFragment(), ThirdFragment())
 
         viewpageradapter = ViewPagerAdapter(listoffragments,supportFragmentManager,lifecycle)
