@@ -19,7 +19,7 @@ class TodoListViewModel : ViewModel() {
 
         val tabelData = mutableListOf<TodoModel>()
         db = context.openOrCreateDatabase("TodoList", Context.MODE_PRIVATE,null)
-        db.execSQL("CREATE TABLE IF NOT EXISTS todo(ID INTEGER PRIMARY KEY AUTOINCREMENT , TODOTASK VARCHAR, COMPLETED INTEGER DEFAULT 0)")
+        db.execSQL("""CREATE TABLE IF NOT EXISTS todo(ID INTEGER PRIMARY KEY AUTOINCREMENT , TODOTASK VARCHAR, COMPLETED INTEGER DEFAULT 0)""".trimIndent())
 
         val cursor = db.rawQuery("SELECT * FROM todo", null)
 

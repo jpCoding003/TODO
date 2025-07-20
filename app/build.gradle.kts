@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("kotlin-kapt")
 }
 
 android {
@@ -39,6 +40,16 @@ android {
 }
 
 dependencies {
+
+    //RoomLibrary
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.2.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0")
+
+    implementation("androidx.room:room-runtime:2.6.1")
+    kapt("androidx.room:room-compiler:2.6.1")
+
+    // Optional - Kotlin Extensions and Coroutines support for Room
+    implementation("androidx.room:room-ktx:2.6.1")
 
     //viewpager
     implementation("androidx.viewpager2:viewpager2:1.1.0")
