@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.tops.todo.Todo
 import com.tops.todo.databinding.ItemTodoBinding
 
-class ThirdAdapter(private var tasklist: MutableList<Todo>): RecyclerView.Adapter<ThirdAdapter.ThirdViewHolder>() {
+class ThirdAdapter(private var tasklist: MutableList<Todo>, private val onDeleteClick: (Todo) -> Unit): RecyclerView.Adapter<ThirdAdapter.ThirdViewHolder>() {
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -22,6 +22,10 @@ class ThirdAdapter(private var tasklist: MutableList<Todo>): RecyclerView.Adapte
         val list = tasklist[position]
         holder.binding.tvTitle.text = list.title
 
+        holder.binding.btnDelete.setOnClickListener {
+            onDeleteClick(list)
+            true
+        }
     }
 
     override fun getItemCount(): Int = tasklist.size

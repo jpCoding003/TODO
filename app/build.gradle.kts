@@ -41,7 +41,7 @@ android {
 
 dependencies {
 
-    //RoomLibrary
+    //ViewModelScope
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.2.0")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0")
 

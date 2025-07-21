@@ -30,20 +30,25 @@ class ThirdFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
         binding.rvViewTaskList.layoutManager = LinearLayoutManager(requireContext())
 
-        adapter = ThirdAdapter(mutableListOf())
+        adapter = ThirdAdapter(mutableListOf()){todo->
+            newviewmodel.deleteTodo(todo)
+        }
         binding.rvViewTaskList.adapter = adapter
         newviewmodel.todotask.observe(viewLifecycleOwner, Observer{
-            task-> adapter.updateList(task as MutableList<Todo>)
+            task-> adapter.updateList(task.toMutableList())
         })
-
 
         binding.btnNewAddTAsk.setOnClickListener {
             val title = binding.etTaskTitle.text.toString()
-            newviewmodel.addTodo(title)
-        }
 
+            if (title.isEmpty()){
+                binding.etTaskTitle.error = "Enter Todo"
+            }else{
+                newviewmodel.addTodo(title)
+                binding.etTaskTitle.text?.clear()
+            }
+        }
     }
 }

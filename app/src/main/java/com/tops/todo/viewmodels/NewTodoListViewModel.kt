@@ -21,10 +21,9 @@ class NewTodoListViewModel : ViewModel() {
         }
     }
 
-//    fun deleteTodo(id: Int){
-//        viewModelScope.launch(Dispatchers.IO) {
-//            todoDao.deletetask(id)
-//        }
-//    }
-
+    fun deleteTodo(todo: Todo) {
+        viewModelScope.launch(Dispatchers.IO) {
+            todoDao.deleteTodo(todo)
+        }
+    }
 }

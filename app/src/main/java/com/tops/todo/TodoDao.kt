@@ -15,7 +15,6 @@ interface TodoDao {
     @Insert
     suspend fun insertTodo(todo: Todo)    // if passing tomuch coloumns pass the model in it
 
-//    @Query("DELETE FROM todo WHERE id = :id")
-//    suspend fun deletetask(id:Int)
-
+    @Delete
+    suspend fun deleteTodo(todo: Todo)
 }
